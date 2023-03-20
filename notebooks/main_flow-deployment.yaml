@@ -1,0 +1,59 @@
+###
+### A complete description of a Prefect Deployment for flow 'Bitcoin Price Pipeline'
+###
+name: bitcoin_flow
+description: null
+version: b56f3b2801e0e1edec123e37e68dabf4
+# The work queue that will handle this deployment's runs
+work_queue_name: default
+work_pool_name: null
+tags: []
+parameters: {}
+schedule:
+  interval: 60.0
+  anchor_date: '2023-03-17T16:08:20.258420+00:00'
+  timezone: UTC
+is_schedule_active: null
+infra_overrides: {}
+infrastructure:
+  type: process
+  env: {}
+  labels: {}
+  name: null
+  command: null
+  stream_output: true
+  working_dir: null
+  block_type_slug: process
+  _block_type_slug: process
+
+###
+### DO NOT EDIT BELOW THIS LINE
+###
+flow_name: Bitcoin Price Pipeline
+manifest_path: null
+storage: null
+path: /home/seba/Documentos/Proyectos_personales/bitcoin-project/data/bitcoin_prices.csv
+entrypoint: 04_flow_deployment.py:main_flow
+parameter_openapi_schema:
+  title: Parameters
+  type: object
+  properties:
+    tickers:
+      title: tickers
+      default: BTC-USD
+      position: 0
+    period:
+      title: period
+      default: 5h
+      position: 1
+    interval:
+      title: interval
+      default: 5m
+      position: 2
+    path:
+      title: path
+      default: ../data/bitcoin_prices.csv
+      position: 3
+  required: null
+  definitions: null
+timestamp: '2023-03-17T16:08:20.259014+00:00'
